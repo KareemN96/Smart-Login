@@ -40,10 +40,30 @@ function dataCollected() {
     document.querySelector("#log_mas").classList.replace("d-none", "d-block");
   }
 }
-
+function signUpChecker(ele) {
+  let regex = {
+    uEmail: /^([A-Z]{1,})?[a-z]{1,}([0-9]{1,})?@(gmail|outlook|yahoo).com$/,
+    uPass: /^([A-Z]{1,})?([a-z]{2,})?([0-9]{1,})?$/,
+  };
+  if (regex[ele.id].test(ele.value) == true) {
+    ele.classList.add("is-valid");
+    ele.classList.remove("is-invalid");
+  } else {
+    ele.classList.add("is-invalid");
+    ele.classList.remove("is-valid");
+  }
+}
 function checker(ele) {
-  let regex={
-    log
+  let regex = {
+    logEmail: /^([A-Z]{1,})?[a-z]{1,}([0-9]{1,})?@(gmail|outlook|yahoo).com$/,
+    logPass: /^([A-Z]{1,})?([a-z]{2,})?([0-9]{1,})?$/,
+  };
+  if (regex[ele.id].test(ele.value) == true) {
+    ele.classList.add("is-valid");
+    ele.classList.remove("is-invalid");
+  } else {
+    ele.classList.add("is-invalid");
+    ele.classList.remove("is-valid");
   }
   for (let i = 0; i < dataContainer.length; i++) {
     if (
@@ -99,9 +119,8 @@ function logout() {
     if (willLogout) {
       localStorage.removeItem("loginUser");
       window.location.href = "./index.html";
-    }else{
-      swal({title:"You Are Still Here Awesome 🥳❤️"});
+    } else {
+      swal({ title: "You Are Still Here Awesome 🥳❤️" });
     }
   });
 }
-

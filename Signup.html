@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="shortcut icon" href="./imgs/sign-up.svg" type="signup">
+    <link rel="shortcut icon" href="./imgs/sign-up.svg" type="signup" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="Css/bootstrap.min.css" />
     <!-- font-awesome -->
@@ -20,7 +20,9 @@
             class="row justify-content-center align-items-center gy-2 text-center ms-5 me-5"
           >
             <div class="col-12">
-              <h2 class="mt-5 mb-3 text-info text-opacity-75">Smart Login System</h2>
+              <h2 class="mt-5 mb-3 text-info text-opacity-75">
+                Smart Login System
+              </h2>
               <input
                 type="text"
                 class="form-control mt-3 name"
@@ -29,20 +31,24 @@
                 required
               />
               <input
+                oninput="signUpChecker(this)"
                 type="email"
                 class="form-control mt-3 new_email"
-                id="email"
+                id="uEmail"
                 placeholder="Enter Your Email"
                 required
               />
               <input
+                oninput="signUpChecker(this)"
                 type="password"
                 class="form-control mt-3 new_pass"
-                id="password"
+                id="uPass"
                 placeholder="Enter Your password"
                 required
               />
-              <p class=" text-danger mt-4 mb-0 d-none" id="log_mas">All inputs is required</p>
+              <p class="text-danger mt-4 mb-0 d-none" id="log_mas">
+                All inputs is required
+              </p>
             </div>
             <div class="row">
               <a
