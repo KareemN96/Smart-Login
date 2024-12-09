@@ -42,6 +42,9 @@ function dataCollected() {
 }
 
 function checker(ele) {
+  let regex={
+    log
+  }
   for (let i = 0; i < dataContainer.length; i++) {
     if (
       logEmail.value.toLowerCase() === dataContainer[i].userEmail &&
@@ -50,7 +53,7 @@ function checker(ele) {
       ele.classList.add("is-valid");
       ele.classList.remove("is-invalid");
       localStorage.setItem("loginUser", JSON.stringify(dataContainer[i]));
-      document.querySelector("#login").setAttribute("href", "./home");
+      document.querySelector("#login").setAttribute("href", "./home.html");
       document
         .querySelector("#wrong_mas")
         .classList.replace("d-block", "d-none");
@@ -87,6 +90,18 @@ function loginData() {
 })();
 
 function logout() {
-document.querySelector("#log_out").setAttribute("href", "./index.html"); 
-localStorage.removeItem("loginUser");
+  swal({
+    title: "Are you sure you want to log out?🥺💔",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willLogout) => {
+    if (willLogout) {
+      localStorage.removeItem("loginUser");
+      window.location.href = "./index.html";
+    }else{
+      swal({title:"You Are Still Here Awesome 🥳❤️"});
+    }
+  });
 }
+
