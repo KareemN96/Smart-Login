@@ -20,7 +20,9 @@ function dataCollected() {
       signUpData.userEmail === dataContainer[i].userEmail &&
       signUpData.userPass === dataContainer[i].userPass
     ) {
-      swal("❌👨🏾‍💻", "Data is Duplicated, please Try Again 🔄️", { icon: "warning" });
+      swal("❌👨🏾‍💻", "Data is Duplicated, please Try Again 🔄️", {
+        icon: "warning",
+      });
       uName.value = "";
       uEmail.value = "";
       uPass.value = "";
@@ -48,7 +50,7 @@ function checker(ele) {
       ele.classList.add("is-valid");
       ele.classList.remove("is-invalid");
       localStorage.setItem("loginUser", JSON.stringify(dataContainer[i]));
-      document.querySelector("#login").setAttribute("href", "../home.html");
+      document.querySelector("#login").setAttribute("href", "./home");
       document
         .querySelector("#wrong_mas")
         .classList.replace("d-block", "d-none");
@@ -56,7 +58,7 @@ function checker(ele) {
     } else {
       ele.classList.add("is-invalid");
       ele.classList.remove("is-valid");
-      document.querySelector("#login").removeAttribute("href", "../home.html");
+      document.querySelector("#login").removeAttribute("href", "./home.html");
       document
         .querySelector("#wrong_mas")
         .classList.replace("d-none", "d-block");
@@ -85,5 +87,6 @@ function loginData() {
 })();
 
 function logout() {
-  localStorage.removeItem("loginUser");
+document.querySelector("#log_out").setAttribute("href", "./index.html"); 
+localStorage.removeItem("loginUser");
 }
