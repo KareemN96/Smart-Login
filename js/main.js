@@ -12,7 +12,7 @@ function dataCollected() {
   let signUpData = {
     userName: uName.value,
     userEmail: uEmail.value.toLowerCase(),
-    userPass: uPass.value.toLowerCase(),
+    userPass: uPass.value,
   };
   for (var i = 0; i < dataContainer.length; i++) {
     if (
